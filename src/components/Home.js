@@ -1,8 +1,7 @@
 import React,{useRef,useState} from 'react'
-
 import {img} from '../assests'
 import '../style.css';
-import { PDFDocument, rgb,fontkit} from 'pdf-lib'
+import { PDFDocument,StandardFonts, rgb,fontkit} from 'pdf-lib'
 
 
 const Home = () => {
@@ -11,7 +10,6 @@ const Home = () => {
   let [val,setVal] = useState("");
   
 const handleChange = ()=>{
-
   setVal(userName.current.value);
 }
 
@@ -35,34 +33,54 @@ const capitalize = (str, lower = false) =>
 
 // yu
 const generatePDF = async (name) => {
-  const existingPdfBytes = await fetch("./cert.pdf").then((res) =>res.arrayBuffer()
+  const existingPdfBytes = await fetch("./certificate1.pdf").then((res) =>res.arrayBuffer()
   );
+
+
 
 
   // Load a PDFDocument from the existing PDF bytes
   const pdfDoc = await PDFDocument.load(existingPdfBytes);
   pdfDoc.registerFontkit(fontkit);
 
-  //get font
+  // Embed our custom font in the document
+
+  const TimesRomanItalic = await pdfDoc.embedFont(StandardFonts.TimesRomanItalic)
+
+
+  // // get font
   // const fontBytes = await fetch("./Sanchez-Regular.ttf").then((res) =>
   //   res.arrayBuffer()
   // );
   // PDFDocument.registerFontkit(fontBytes);
-  // Embed our custom font in the document
+  // // Embed our custom font in the document
   // const SanChezFont = await pdfDoc.embedFont(fontBytes);
   
   // Get the first page of the document
   const pages = pdfDoc.getPages();
   const firstPage = pages[0];
 
+
+
   // Draw a string of text diagonally across the first page
-  firstPage.drawText(name, {
-    x: 180,
-    y: 270,
-    size: 58,
-    // font: SanChezFont,
-    color: rgb(0, 0, 0),
-  });
+  if(name.length<17){
+    firstPage.drawText(name, {
+      x: 60,
+      y: 330,
+      size: 58,
+      font: TimesRomanItalic,
+      color: rgb(0, 0, 0),
+    });
+  }
+  else{
+    firstPage.drawText(name, {
+      x: 60,
+      y: 330,
+      size: 40,
+      font: TimesRomanItalic,
+      color: rgb(0, 0, 0),
+    });
+  }
 
   // Serialize the PDFDocument to bytes (a Uint8Array)
   const pdfBytes = await pdfDoc.save();
@@ -83,7 +101,7 @@ const generatePDF = async (name) => {
   let blob = new Blob([pdfBytes], {type: "application/pdf"});
   let link = document.createElement('a');
   link.href = window.URL.createObjectURL(blob);
-  let fileName = 'CrackDSA_Participation.pdf';
+  let fileName = 'CrackDSA-Participation-Certificate.pdf';
   link.download = fileName;
   link.click();
 };
@@ -104,4 +122,4 @@ const generatePDF = async (name) => {
   )
 }
 
-export default Home
+export default Home;
