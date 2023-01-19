@@ -71,11 +71,21 @@ a {
   color: #6492f6;
 }
 
+.front{
+  font-family: "Motiva Sans Bold sans-serif";
+   color: #18216d;
+   font-size:"5px";
+   font-weight:"700";
+}
+
 /* dark mode css */
 @media (prefers-color-scheme: dark) {
   body {
     background: var(--dark-color);
     color: #fff;
+  }
+  .front{
+    color: rgb(148, 250, 65);
   }
   input,
   input:active {
@@ -109,9 +119,3 @@ header::before{
   font-family: 'Orbitron', sans-serif;
 } */
 
-.front{
-  font-family: "Motiva Sans Bold sans-serif";
-   color: #18216d;
-   font-size:"5px";
-   font-weight:"700";
-}
