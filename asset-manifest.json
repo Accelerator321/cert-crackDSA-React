@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/cert-crackDSA-React/static/css/main.a1b51cb4.css",
-    "main.js": "/cert-crackDSA-React/static/js/main.1659c5e0.js",
+    "main.css": "/cert-crackDSA-React/static/css/main.d87f5630.css",
+    "main.js": "/cert-crackDSA-React/static/js/main.fb5f3dd2.js",
     "static/js/787.775cbd80.chunk.js": "/cert-crackDSA-React/static/js/787.775cbd80.chunk.js",
     "static/media/bg.jpg": "/cert-crackDSA-React/static/media/bg.13a7db1cc5b882a1840a.jpg",
     "static/media/certificate.png": "/cert-crackDSA-React/static/media/certificate.c1973fad60fcf0f4fea9.png",
     "index.html": "/cert-crackDSA-React/index.html",
-    "main.a1b51cb4.css.map": "/cert-crackDSA-React/static/css/main.a1b51cb4.css.map",
-    "main.1659c5e0.js.map": "/cert-crackDSA-React/static/js/main.1659c5e0.js.map",
+    "main.d87f5630.css.map": "/cert-crackDSA-React/static/css/main.d87f5630.css.map",
+    "main.fb5f3dd2.js.map": "/cert-crackDSA-React/static/js/main.fb5f3dd2.js.map",
     "787.775cbd80.chunk.js.map": "/cert-crackDSA-React/static/js/787.775cbd80.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a1b51cb4.css",
-    "static/js/main.1659c5e0.js"
+    "static/css/main.d87f5630.css",
+    "static/js/main.fb5f3dd2.js"
   ]
 }
